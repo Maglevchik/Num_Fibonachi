@@ -1,0 +1,14 @@
+import collections
+from test.test_descrtut import defaultdict
+fibonacci_dict = {} #Словарь, где будут индексы и списки с числами
+fibonacci_list = [0,1] #Список, куда будут загружаться чилса Фибоначи
+num = int(input('Give me the border of score numbers Fibonachi:'))
+inx = 0 #Счетчик для цикла и названия ключей
+def count(list,i): #Ф-ия для
+    for element in list: #Прочекивания списка
+        if element > i: return list.index(element) #Нахождения числа больше за "Номер ключа" в словаре
+while inx <= num:
+    fibonacci_list.append(fibonacci_list[-1] + fibonacci_list[-2]) #Добавляет числа в список по схеме Фибоначи
+    fibonacci_dict[inx] = fibonacci_list[:count(fibonacci_list,inx)] #Добавление в словарь новой пары со "Значением", которое имеет интервал до числа(превышающего порог "Ключа" словаря)
+    inx += 1
+print(fibonacci_dict)
